@@ -37,14 +37,14 @@ SMODS.Joker{ --Carrier Flagship
     atlas = 'CustomJokers',
 
     loc_vars = function(self, info_queue, card)
-        local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'j_sholium_carrierflagship') 
+        local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'j_sholextra_carrierflagship') 
         return {vars = {card.ability.extra.chips, new_numerator, new_denominator}}
     end,
 
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play then
             if context.other_card:is_suit("Clubs") then
-                if SMODS.pseudorandom_probability(card, 'group_0_86561525', 1, card.ability.extra.odds, 'j_sholium_carrierflagship', false) then
+                if SMODS.pseudorandom_probability(card, 'group_0_86561525', 1, card.ability.extra.odds, 'j_sholextra_carrierflagship', false) then
               SMODS.calculate_effect({x_chips = card.ability.extra.chips}, card)
           end
             end
