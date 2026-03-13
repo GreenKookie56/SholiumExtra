@@ -57,7 +57,7 @@ SMODS.Joker{ --Bacteria
                     func = function()
                 local target_joker = nil
                 for i, joker in ipairs(G.jokers.cards) do
-                    if joker.config.center.key == "j_sholium_bacteria" then
+                    if joker.config.center.key == "j_sholextra_bacteria" then
                         target_joker = joker
                         break
                     end
