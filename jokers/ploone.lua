@@ -9,15 +9,15 @@ SMODS.Joker{ --Ploone
         ['text'] = {
             [1] = 'Create a {C:dark_edition}Negative{} {C:attention}Lucky Cat{}',
             [2] = 'at the end of {C:attention}shop{}',
-            [3] = '{C:inactive}Designed by Ic1clez_{}'
+            [3] = '{C:inactive}Art & Design by Ic1clez_{}'
         },
         ['unlock'] = {
             [1] = ''
         }
     },
     pos = {
-        x = 6,
-        y = 3
+        x = 2,
+        y = 6
     },
     display_size = {
         w = 71 * 1, 
