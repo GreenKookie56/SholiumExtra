@@ -15,15 +15,15 @@ SMODS.Joker{ --Ancient meme
         }
     },
     pos = {
-        x = 2,
-        y = 0
+        x = 3,
+        y = 6
     },
     display_size = {
         w = 71 * 1, 
         h = 95 * 1
     },
     cost = 21,
-    rarity = 4,
+    rarity = "sholextra_peculiar",
     blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
