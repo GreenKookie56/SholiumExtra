@@ -19,8 +19,8 @@ SMODS.Joker{ --Horseboard
         }
     },
     pos = {
-        x = 6,
-        y = 2
+        x = 0,
+        y = 6
     },
     display_size = {
         w = 71 * 1, 
@@ -34,10 +34,6 @@ SMODS.Joker{ --Horseboard
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
-    soul_pos = {
-        x = 7,
-        y = 2
-    },
 
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main  then
