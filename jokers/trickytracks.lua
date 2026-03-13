@@ -80,6 +80,6 @@ SMODS.Joker{ --Tricky tracks
                     colour = G.C.BLUE
                     }
                 }
-            }
-    end
+        end
 }
+
