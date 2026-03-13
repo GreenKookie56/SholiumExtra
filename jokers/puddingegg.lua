@@ -26,7 +26,7 @@ SMODS.Joker{ --Pudding Egg
         h = 95 * 1
     },
     cost = 30,
-    rarity = "sholium_peculiar",
+    rarity = "sholextra_peculiar",
     blueprint_compat = false,
     demicoloncompat = true,
     eternal_compat = false,
