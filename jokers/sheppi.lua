@@ -18,8 +18,8 @@ SMODS.Joker{ --Sheppi
         }
     },
     pos = {
-        x = 0,
-        y = 4
+        x = 5,
+        y = 6
     },
     display_size = {
         w = 71 * 1, 
