@@ -1,14 +1,10 @@
 SMODS.Joker{ --Cave Monkey
     key = "cavemonkey",
-    config = {
-        extra = {
-            echips = 50
-        }
-    },
     loc_txt = {
         ['name'] = 'Cave Monkey',
         ['text'] = {
             [1] = 'Me Hit Rock'
+            [2] = '{C:inactive, s:0.6}and it went negative{}'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
@@ -22,8 +18,8 @@ SMODS.Joker{ --Cave Monkey
         w = 71 * 1, 
         h = 95 * 1
     },
-    cost = 10,
-    rarity = "sholatro_the_pro",
+    cost = 9,
+    rarity = 3,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
@@ -58,13 +54,6 @@ SMODS.Joker{ --Cave Monkey
             end,
                     message = "Added Card to Hand!"
                 }
-        end
-        if context.individual and context.cardarea == G.play  then
-            if SMODS.get_enhancements(context.other_card)["m_stone"] == true then
-                return {
-                    e_chips = card.ability.extra.echips
-                }
-            end
         end
     end
 }
