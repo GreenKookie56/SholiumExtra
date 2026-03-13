@@ -3,7 +3,7 @@ SMODS.Joker{ --Cave Monkey
     loc_txt = {
         ['name'] = 'Cave Monkey',
         ['text'] = {
-            [1] = 'Me Hit Rock'
+            [1] = 'Me Hit Rock',
             [2] = '{C:inactive, s:0.6}and it went negative{}'
         },
         ['unlock'] = {
