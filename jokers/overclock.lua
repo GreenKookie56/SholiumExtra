@@ -1,6 +1,4 @@
-if not next(SMODS.find_mod("Cryptid")) or not Talisman then
-  return nil
-end
+if Talisman then 
 
 SMODS.Joker{ --Overclock
     key = "overclock",
@@ -72,3 +70,4 @@ SMODS.Joker{ --Overclock
         end
     end
 }
+end
