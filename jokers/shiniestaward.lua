@@ -19,8 +19,8 @@ SMODS.Joker{ --Shiniest award (v38)
         }
     },
     pos = {
-        x = 1,
-        y = 4
+        x = 6,
+        y = 6
     },
     display_size = {
         w = 71 * 1, 
