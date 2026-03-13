@@ -42,7 +42,7 @@ SMODS.Joker{ --Prion
     calculate = function(self, card, context)
         if context.end_of_round and context.main_eval and G.GAME.blind.boss  then
             if true then
-                if SMODS.pseudorandom_probability(card, 'group_0_ebc71fee', 1, card.ability.extra.odds, 'j_sholium_prion', false) then
+                if SMODS.pseudorandom_probability(card, 'group_0_ebc71fee', 1, card.ability.extra.odds, 'j_sholextra_prion', false) then
               SMODS.calculate_effect({func = function()
                     local mod = -card.ability.extra.ante_value
 		ease_ante(mod)
