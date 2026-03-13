@@ -1,7 +1,3 @@
-if not next(SMODS.find_mod("Cryptid")) then
-  return nil
-end
-
 SMODS.Joker{ --Flash
     key = "flash",
     config = {
@@ -32,7 +28,7 @@ SMODS.Joker{ --Flash
         h = 95 * 1
     },
     cost = 30,
-    rarity = "sholium_peculiar",
+    rarity = "sholextra_peculiar",
     blueprint_compat = true,
     demicoloncompat = true,
     eternal_compat = true,
