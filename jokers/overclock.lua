@@ -51,7 +51,7 @@ SMODS.Joker{ --Overclock
             local created_joker = true
             G.E_MANAGER:add_event(Event({
                 func = function()
-                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_sholium_bossfarmingguide' })
+                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_sholextra_bossfarmingguide' })
                     if joker_card then
                         joker_card:set_edition("e_negative", true)
                         
