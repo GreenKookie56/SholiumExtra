@@ -35,7 +35,15 @@ SMODS.Joker{ --Piglin
     
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main then
-          if SMODS.get_enhancements(context.other_card)["m_gold"] == true then
+            if (function()
+                local count = 0
+                for _, playing_card in pairs(context.scoring_hand or {}) do
+                    if playing_card.enchancement and playing_card.enhancement.key == "gold" then
+                        count = count + 1
+                    end
+                end
+                return to_big(count) >= to_big(1)
+            end)() then
             for i = 1, math.min(1, G.consumeables.config.card_limit - #G.consumeables.cards) do
                 G.E_MANAGER:add_event(Event({
                     trigger = 'after',
