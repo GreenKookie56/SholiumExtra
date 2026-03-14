@@ -20,8 +20,8 @@ SMODS.Joker{ --Piglin Brute
         }
     },
     pos = {
-        x = 0,
-        y = 0
+        x = 1,
+        y = 7
     },
     display_size = {
         w = 71 * 1, 
@@ -30,12 +30,12 @@ SMODS.Joker{ --Piglin Brute
     cost = 6,
     rarity = 2,
     blueprint_compat = true,
+    demicoloncompat = true,
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
     discovered = true,
     atlas = 'Joker',
-    pools = { ["modprefix_sholiumx_jokers"] = true },
     
     loc_vars = function(self, info_queue, card)
         
@@ -53,9 +53,18 @@ SMODS.Joker{ --Piglin Brute
                 }
             end
         end
-        if context.cardarea == G.jokers and context.joker_main  then
+        if context.cardarea == G.jokers and context.joker_main then
             return {
                 Xmult = card.ability.extra.mult
+            }
+        end
+        if context.forcetrigger then
+            return {
+                func = function()
+                    card.ability.extra.mult = (card.ability.extra.mult) + card.ability.extra.scale
+                    Xmult = card.ability.extra.mult
+                    return true
+                end
             }
         end
     end
