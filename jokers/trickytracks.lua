@@ -21,7 +21,7 @@ SMODS.Joker{ --Tricky tracks
         }
     },
     pos = {
-        x = 6,
+        x = 7,
         y = 6
     },
     display_size = {
@@ -74,7 +74,7 @@ SMODS.Joker{ --Tricky tracks
                 end,
                 extra = {
                     func = function()
-                        card.ability.extra.scale = lenient_bignum((3 - card.ability.extra.mult) * 0.1 + 0.1)
+                        card.ability.extra.scale = lenient_bignum(math.abs(3 - card.ability.extra.mult) * 0.1 + 0.1)
                         return true
                     end,
                     colour = G.C.BLUE
