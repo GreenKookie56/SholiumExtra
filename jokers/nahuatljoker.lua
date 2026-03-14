@@ -37,7 +37,7 @@ SMODS.Joker{ --Nahuatl Joker
             local scored_card = context.other_card
             G.E_MANAGER:add_event(Event({
                 func = function()
-                    assert(SMODS.modify_rank(scored_card, nil, -1))
+                    assert(SMODS.modify_rank(scored_card, -1))
                     return true
                 end
             }))
