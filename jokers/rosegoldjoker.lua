@@ -9,7 +9,7 @@ SMODS.Joker{ --Rose Gold Joker
     loc_txt = {
         ['name'] = 'Rose Gold Joker',
         ['text'] = {
-            [1] = '{C:attention}+1{} Joker slot',
+            [1] = '{C:dark_edition}+1{} Joker slot',
             [2] = '{C:attention}+1{} Consumable slot'
         },
         ['unlock'] = {
