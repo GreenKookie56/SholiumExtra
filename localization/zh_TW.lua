@@ -412,7 +412,7 @@ return {
 			j_sholextra_rosegoldjoker = {
 				name = "玫瑰金小丑",
 				text = {
-					"{C:attention}+1{}小丑欄位",
+					"{C:dark_edition}+1{}小丑牌欄位",
 					"{C:attention}+1{}消耗牌欄位",
  				},
 			},
