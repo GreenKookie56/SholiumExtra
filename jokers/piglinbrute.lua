@@ -49,7 +49,8 @@ SMODS.Joker{ --Piglin Brute
                     func = function()
                         card.ability.extra.mult = (card.ability.extra.mult) + card.ability.extra.scale
                         return true
-                    end
+                    end,
+                    message = "Upgrade!"
                 }
             end
         end
