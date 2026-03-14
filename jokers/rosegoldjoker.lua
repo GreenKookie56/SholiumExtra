@@ -31,7 +31,7 @@ SMODS.Joker{ --Rose Gold Joker
     perishable_compat = false,
     unlocked = true,
     discovered = true,
-    atlas = 'Joker',
+    atlas = 'CustomJokers',
     
     calculate = function(self, card, context)
     end,
