@@ -33,8 +33,7 @@ SMODS.Joker{ --Nahuatl Joker
     atlas = 'CustomJokers',
     
     calculate = function(self, card, context)
-      if context.after and context.cardarea == G.jokers and to_big(#context.full_hand) == to_big(3) then
-       if context.individual and context.cardarea == G.play then
+       if context.individual and context.cardarea == G.play and to_big(#context.full_hand) == to_big(3) then
             local scored_card = context.other_card
             G.E_MANAGER:add_event(Event({
                 func = function()
@@ -43,6 +42,5 @@ SMODS.Joker{ --Nahuatl Joker
                 end
             }))
         end
-       end
     end
 }
