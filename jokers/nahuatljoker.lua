@@ -16,8 +16,8 @@ SMODS.Joker{ --Nahuatl Joker
         }
     },
     pos = {
-        x = 0,
-        y = 0
+        x = 9,
+        y = 6
     },
     display_size = {
         w = 71 * 1, 
