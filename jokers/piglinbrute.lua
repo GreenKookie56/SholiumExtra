@@ -35,7 +35,7 @@ SMODS.Joker{ --Piglin Brute
     perishable_compat = true,
     unlocked = true,
     discovered = true,
-    atlas = 'Joker',
+    atlas = 'CustomJokers',
     
     loc_vars = function(self, info_queue, card)
         
