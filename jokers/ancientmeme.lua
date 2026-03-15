@@ -1,3 +1,5 @@
+if Talisman then
+
 SMODS.Joker{ --Ancient meme
     key = "ancientmeme",
     config = {
@@ -22,7 +24,7 @@ SMODS.Joker{ --Ancient meme
         w = 71 * 1, 
         h = 95 * 1
     },
-    cost = 21,
+    cost = 30,
     rarity = "sholextra_peculiar",
     blueprint_compat = false,
     demicoloncompat = true,
@@ -47,3 +49,4 @@ SMODS.Joker{ --Ancient meme
         end
     end
 }
+end
