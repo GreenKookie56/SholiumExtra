@@ -47,4 +47,3 @@ SMODS.Joker{ --Ancient meme
         end
     end
 }
-end
