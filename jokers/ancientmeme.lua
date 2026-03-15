@@ -1,5 +1,3 @@
-if Talisman then
-
 SMODS.Joker{ --Ancient meme
     key = "ancientmeme",
     config = {
