@@ -36,7 +36,6 @@ SMODS.Joker{ --The Pudding
             [2] = '{X:dark_edition,C:white}operator{} increases once if',
             [3] = 'played hand contains a',
             [4] = '{C:attention}Straight Flush{} and {C:attention}7{} of {C:clubs}Clubs{}',
-            [5] = ''
         },
         ['unlock'] = {
             [1] = ''
