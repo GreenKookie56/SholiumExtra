@@ -63,8 +63,8 @@ return {
 			j_sholextra_bioweapon = {
 				name = "生化武器",
 				text = {
-					"結束階段，這張小丑獲得{X:red,C:white}X#2#{}倍率",
-					"{C:inactive}(目前{}{X:red,C:white}X#1#{}{C:inactive}倍率){}",
+					"結束階段，這張小丑獲得{C:red}-#1#{}及{X:red,C:white}X#2#{}倍率",
+					"{C:inactive}(目前{}{C:red}#3#{}{C:inactive}，{}{X:red,C:white}X#4#{}{C:inactive}倍率){}",
 				},
 			},
 			j_sholextra_bloonchipper = {
@@ -265,14 +265,15 @@ return {
 			j_sholextra_megalodon = {
 				name = "巨齒鯊",
 				text = {
-					"打出且得分的牌{C:red}+#1#{}倍率",
-					"並在得分結算後被{C:red}摧毀{}",
+					"當{C:red}倍率牌{}/{C:blue}獎勵牌{}計分時，",
+					"分別獲得{X:red,C:white}X#3#{}倍率/{X:blue,C:white}X#3#{}籌碼",
+					"{C:inactive}(目前{}{X:red,C:white}X#1#{}{C:inactive}倍率，{}{X:blue,C:white}X#2#{}{C:inactive}籌碼){}",
 				},
 			},
 			j_sholextra_nanovirus = {
 				name = "奈米病毒",
 				text = {
-					"購買任意一張牌時獲得{C:gold}$2{}",
+					"商店商品價格均便宜{C:gold}$1{}",
 				},
 			},
 			j_sholextra_nahuatljoker = {
@@ -471,7 +472,8 @@ return {
 			j_sholextra_theblazingsun = {
 				name = "熾熱太陽",
 				text = {
-					"每{C:attention}5{}次出牌{C:red}+55{}倍率",
+					"第{C:attention}5{}次出牌{C:red}+55{}倍率",
+					"非第5次出牌{C:blue}+12{}籌碼",
 					"{C:inactive}剩餘#1#次{}",
 				},
 			},
@@ -485,8 +487,9 @@ return {
 			j_sholextra_thepudding = {
 				name = "小布丁",
 				text = {
-					"若打出的牌包含{C:clubs}梅花{}和{C:attention}7{}",
-					"產生一個{C:dark_edition}負片{}{C:spectral,E:1}Shol理元素{}",
+					"{X:dark_edition,C:white}#1#{}倍率",
+					"若打出的牌包含{C:attention}同花順{}和{C:clubs}梅花{}{C:attention}7{}，",
+					"{X:dark_edition,C:white}運算符號{}升級一次",
 				},
 			},
 			j_sholextra_trickytracks = {
