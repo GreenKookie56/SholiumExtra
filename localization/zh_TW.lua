@@ -199,7 +199,7 @@ return {
 				},
 			},
 			j_sholextra_glaivelord = {
-				name = "大刀王(v48+)",
+				name = "大刀王",
 				text = {
 					"每次出牌中{C:attention}非第一次{}計分的牌",
 					"為這張小丑提供{C:blue}+#2#{}籌碼",
@@ -348,10 +348,10 @@ return {
 				},
 			},
 			j_sholextra_popandawe = {
-				name = "爆炸中請仰視(v39)",
+				name = "爆炸中請仰視",
 				text = {
 					"{C:blue}-8{}籌碼",
-					"{X:blue,C:white}X4{}籌碼",
+					"{X:blue,C:white}X3{}籌碼",
 				},
 			},
 			j_sholextra_pouakai = {
