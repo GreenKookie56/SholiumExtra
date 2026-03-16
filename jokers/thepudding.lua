@@ -1,5 +1,3 @@
-if Talisman then
-
 -- arrow format stolen from entropy
 function FormatArrowMult(arrows, mult)
     mult = number_format(mult)
@@ -20,6 +18,8 @@ function FormatArrowMult(arrows, mult)
         return "{"..arrows.."}"..mult
     end
 end
+
+if Talisman then
 
 SMODS.Joker{ --The Pudding
     key = "thepudding",
@@ -70,7 +70,7 @@ SMODS.Joker{ --The Pudding
     
     loc_vars = function(self, info_queue, card)
         
-        return {vars = FormatArrowMult(card.ability.extra.operator, 17)}
+        return {vars = FormatArrowMult(card.ability.extra.operator, card.ability.extra.mult)}
     end,
     
     calculate = function(self, card, context)
