@@ -38,7 +38,7 @@ SMODS.Joker{ --Stupid Owl Stall
     atlas = 'CustomJokers',
 
     loc_vars = function(self, info_queue, card)
-        local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'j_sholium_stupidowlstall') 
+        local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'j_sholextra_stupidowlstall') 
         return {vars = {card.ability.extra.hands, card.ability.extra.chips, card.ability.extra.round, new_numerator, new_denominator}}
     end,
 
