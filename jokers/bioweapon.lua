@@ -69,5 +69,17 @@ SMODS.Joker{ --Bioweapon
                 }
             }
         end
+		if context.forcetrigger then
+			SMODS.scale_card(card, {
+				ref_table = card.ability.extra,
+				ref_value = "times",
+				scalar_value = "timesmod",
+				message_key = "a_xmult",
+				message_colour = G.C.RED,
+			})
+			return {
+				Xmult = card.ability.extra.times,
+			}
+		end
     end
 }
