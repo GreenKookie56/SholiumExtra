@@ -4,7 +4,7 @@ SMODS.Joker{ --Red Sauda
     loc_txt = {
         ['name'] = 'Red Sauda',
         ['text'] = {
-            [1] = 'Swaps {C:blue}Chips{} and {C:red}Mult{}',
+            [1] = 'Swap {C:blue}Chips{} and {C:red}Mult{}',
             [2] = 'before hand starts scoring'
         },
         ['unlock'] = {
