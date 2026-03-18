@@ -46,7 +46,7 @@ SMODS.Joker{ --tt5
                     end
                 end
             end
-            if left_joker and context.other_hand == left_joker then
+            if left_joker and context.other_card == left_joker then
 			    for i = 1, #G.jokers.cards do
 				    if G.jokers.cards[i] == card then
 					    if Cryptid.demicolonGetTriggerable(G.jokers.cards[i + 1])[1] then
