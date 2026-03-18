@@ -38,7 +38,7 @@ SMODS.Joker{ --tt5
     
     calculate = function(self, card, context)
         if context.post_trigger then
-            local left_joker == nil
+            local left_joker = nil
             for k, v in ipairs(G.jokers.cards) do
                 if v == cards then
                     if k > 1 then
