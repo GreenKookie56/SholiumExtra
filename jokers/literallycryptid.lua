@@ -18,8 +18,8 @@ SMODS.Joker{ --Literally Cryptid
         }
     },
     pos = {
-        x = 0,
-        y = 0
+        x = 3,
+        y = 7
     },
     display_size = {
         w = 71 * 1, 
