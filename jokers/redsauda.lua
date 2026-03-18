@@ -4,8 +4,9 @@ SMODS.Joker{ --Red Sauda
     loc_txt = {
         ['name'] = 'Red Sauda',
         ['text'] = {
-            [1] = 'Swap {C:blue}Chips{} and {C:red}Mult{}',
-            [2] = 'before hand starts scoring'
+            [1] = 'Swaps {C:blue}Chips{} and {C:red}Mult{}',
+            [2] = 'when the {C:attention}first{} played',
+            [3] = 'card is triggered'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
@@ -30,10 +31,12 @@ SMODS.Joker{ --Red Sauda
     atlas = 'CustomJokers',
     
     calculate = function(self, card, context)
-        if context.before then
-            return {
-                swap = true
-            }
+        if context.individual and context.cardarea == G.play  then
+            if context.other_card == context.scoring_hand[1] then
+                return {
+                    swap = true
+                }
+            end
         end
         if context.forcetrigger then
             return {
