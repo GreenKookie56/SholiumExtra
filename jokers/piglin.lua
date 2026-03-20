@@ -18,7 +18,7 @@ SMODS.Joker{ --Piglin
     },
     pos = {
         x = 0,
-        y = 0
+        y = 7
     },
     display_size = {
         w = 71 * 1, 
@@ -27,12 +27,12 @@ SMODS.Joker{ --Piglin
     cost = 6,
     rarity = 1,
     blueprint_compat = true,
+    demicoloncompat = true,
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
     discovered = true,
-    atlas = 'Joker',
-    pools = { ["modprefix_sholiumx_jokers"] = true },
+    atlas = 'CustomJokers',
     
     loc_vars = function(self, info_queue, card)
         
@@ -42,23 +42,7 @@ SMODS.Joker{ --Piglin
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play  and not context.blueprint then
             if (SMODS.get_enhancements(context.other_card)["m_gold"] == true and to_big((card.ability.extra.tarot or 0)) < to_big(1)) then
-                for i = 1, math.min(1, G.consumeables.config.card_limit - #G.consumeables.cards) do
-                    G.E_MANAGER:add_event(Event({
-                        trigger = 'after',
-                        delay = 0.4,
-                        func = function()
-                            play_sound('timpani')
-                            SMODS.add_card({ set = 'Tarot', })                            
-                            card:juice_up(0.3, 0.5)
-                            return true
-                        end
-                    }))
-                end
-                delay(0.6)
                 card.ability.extra.tarot = 1
-                return {
-                    message = created_consumable and localize('k_plus_tarot') or nil
-                }
             end
         end
         if context.cardarea == G.jokers and context.joker_main  then
@@ -81,5 +65,19 @@ SMODS.Joker{ --Piglin
                 }
             end
         end
+    end
+    if context.forcetrigger then
+            for i = 1, math.min(1, G.consumeables.config.card_limit - #G.consumeables.cards) do
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'after',
+                    delay = 0.4,
+                    func = function()
+                        play_sound('timpani')
+                        SMODS.add_card({ set = 'Tarot', })                            
+                        card:juice_up(0.3, 0.5)
+                        return true
+                    end
+                }))
+            end
     end
 }
