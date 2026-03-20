@@ -60,11 +60,18 @@ SMODS.Joker{ --Piglin
                     }))
                 end
                 delay(0.6)
-                card.ability.extra.tarot = 0
                 return {
                     message = created_consumable and localize('k_plus_tarot') or nil
                 }
             end
+        end
+        if context.after and context.cardarea == G.jokers  and not context.blueprint then
+            return {
+                func = function()
+                    card.ability.extra.tarot = 0
+                    return true
+                end
+            }
         end
         if context.forcetrigger then
             for i = 1, math.min(1, G.consumeables.config.card_limit - #G.consumeables.cards) do
