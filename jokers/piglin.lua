@@ -18,7 +18,7 @@ SMODS.Joker{ --Piglin
     },
     pos = {
         x = 0,
-        y = 7
+        y = 0
     },
     display_size = {
         w = 71 * 1, 
@@ -27,12 +27,12 @@ SMODS.Joker{ --Piglin
     cost = 6,
     rarity = 1,
     blueprint_compat = true,
-    demicoloncompat = true,
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
     discovered = true,
-    atlas = 'CustomJokers',
+    atlas = 'Joker',
+    pools = { ["modprefix_sholiumx_jokers"] = true },
     
     loc_vars = function(self, info_queue, card)
         
@@ -60,23 +60,11 @@ SMODS.Joker{ --Piglin
                     }))
                 end
                 delay(0.6)
+                card.ability.extra.tarot = 0
                 return {
                     message = created_consumable and localize('k_plus_tarot') or nil
                 }
             end
         end
-        if context.forcetrigger then
-            for i = 1, math.min(1, G.consumeables.config.card_limit - #G.consumeables.cards) do
-                G.E_MANAGER:add_event(Event({
-                    trigger = 'after',
-                    delay = 0.4,
-                    func = function()
-                        play_sound('timpani')
-                        SMODS.add_card({ set = 'Tarot', })                            
-                        card:juice_up(0.3, 0.5)
-                        return true
-                    end
-                }))
-            end
-        end
+    end
 }
