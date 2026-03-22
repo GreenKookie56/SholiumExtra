@@ -193,8 +193,8 @@ return {
 			j_sholextra_giganotosaurus = {
 				name = "南方巨獸龍",
 				text = {
-					"{X:red,C:white}X6{}倍率",
-					"出牌額外占用{C:blue}2{}個出牌次數",
+					"{X:red,C:white}X#2#{}倍率",
+					"出牌額外占用{C:blue}#1#{}個出牌次數",
 				},
 			},
 			j_sholextra_glaivelord = {
@@ -258,7 +258,7 @@ return {
 				name = "地圖砲",
 				text = {
 					"若牌型包含{C:attention}五條{}或{C:attention}同花葫蘆{}",
-					"重新觸發打出的牌{C:attention}六次{}",
+					"重新觸發打出的牌{C:attention}#1#次{}",
 				},
 			},
 			j_sholextra_literallycryptid = {
