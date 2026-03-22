@@ -9,7 +9,8 @@ SMODS.Joker{ --Literally The Soul
         ['name'] = 'Literally The Soul',
         ['text'] = {
             [1] = 'Creates a {C:legendary}Legendary{} Joker',
-            [2] = 'when {C:attention}this{} Joker is {C:red}destroyed{}'
+            [2] = 'and {C:red}self-destruct{} when',
+            [3] = '{C:attention}Boss Blind{} is defeated'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
@@ -25,7 +26,7 @@ SMODS.Joker{ --Literally The Soul
     },
     cost = 8,
     rarity = 3,
-    blueprint_compat = true,
+    blueprint_compat = false,
     demicolon_compat = true,
     eternal_compat = true,
     perishable_compat = true,
@@ -34,19 +35,59 @@ SMODS.Joker{ --Literally The Soul
     atlas = 'CustomJokers',
 
     calculate = function(self, card, context)
-        if context.selling_self then card.ability.no_destroy = true end
-        if context.destroy_card and context.cardarea == G.Joker then
-            card_eval_status_text(
-                self,
-                "extra",
-                nil,
-                nil,
-                nil,
-                {}
-            )
-            local c = create_card("Joker", G.jokers, nil, 4)
-            c:add_to_deck()
-            G.jokers:emplace(c)
+        if context.end_of_round and context.main_eval and G.GAME.blind.boss and not context.blueprint then
+            return {
+                func = function()
+                    local target_joker = card
+                    if target_joker then
+                        target_joker.getting_sliced = true
+                        G.E_MANAGER:add_event(Event({
+                            func = function()
+                                target_joker:start_dissolve({G.C.RED}, nil, 1.6)
+                                return true
+                            end
+                        }))
+                    end
+                    return true
+                end,
+                extra = {
+                    func = function()
+                        local created_joker = true
+                        G.E_MANAGER:add_event(Event({
+                            func = function()
+                                local joker_card = SMODS.add_card({ set = 'Joker', rarity = 'Legendary' })
+                                if joker_card then
+                                end
+                                return true
+                            end
+                        }))
+                        if created_joker then
+                            card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = localize('k_plus_joker'), colour = G.C.BLUE})
+                        end
+                        return true
+                    end,
+                    colour = G.C.BLUE
+                }
+            }
+        end
+        if context.forcetrigger then
+            return {
+                func = function()
+                    local created_joker = true
+                    G.E_MANAGER:add_event(Event({
+                        func = function()
+                            local joker_card = SMODS.add_card({ set = 'Joker', rarity = 'Legendary' })
+                            if joker_card then 
+                            end
+                            return true
+                        end
+                    }))
+                    if created_joker then
+                        card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = localize('k_plus_joker'), colour = G.C.BLUE})
+                    end
+                    return true
+                end
+            }
         end
     end
 }
