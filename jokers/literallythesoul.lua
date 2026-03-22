@@ -32,7 +32,8 @@ SMODS.Joker{ --Literally The Soul
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
-    
+
+-- stolen from entropy
     calculate = function(self, card, context)
         if context.selling_self then card.ability.no_destroy = true end
         if context.card_being_destroyed and context.card == card then
@@ -42,6 +43,7 @@ SMODS.Joker{ --Literally The Soul
                 nil,
                 nil,
                 nil,
+                {}
             )
             local c = create_card("Joker", G.jokers, nil, "Legendary")
             c:add_to_deck()
