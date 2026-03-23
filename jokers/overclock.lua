@@ -13,7 +13,7 @@ SMODS.Joker{ --Overclock
             [2] = '{C:attention}Boss Farming Guide{}',
             [3] = 'at the end of {C:green}shop{}',
             [4] = '{X:legendary,C:white}^1{} Mult for every digit',
-            [5] = 'of money you currently have'
+            [5] = 'of money you currently have',
             [6] = '{C:inactive}(Currently {}{X:legendary,C:white}^#1#{}{C:inactive} Mult){}'
         },
         ['unlock'] = {
