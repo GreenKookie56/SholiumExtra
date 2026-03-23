@@ -9,7 +9,7 @@ SMODS.Joker{ --Flash
     loc_txt = {
         ['name'] = 'Flash',
         ['text'] = {
-            [1] = 'Create a {C:dark_edition}Negative{} {C:attention}Flash Card{}',
+            [1] = 'Create a {C:attention}Flash Card{}',
             [2] = 'when {C:green}shop{} is {C:attention}rerolled{}',
             [3] = 'Each {C:attention}Flash Card{} gives {X:red,C:white}X#1#{} Mult',
             [4] = 'increase {X:red,C:white}XMult{} value by {X:red,C:white}2{}',
@@ -27,8 +27,8 @@ SMODS.Joker{ --Flash
         w = 71 * 1, 
         h = 95 * 1
     },
-    cost = 30,
-    rarity = "sholextra_peculiar",
+    cost = 20,
+    rarity = 4,
     blueprint_compat = true,
     demicoloncompat = true,
     eternal_compat = true,
@@ -61,28 +61,30 @@ SMODS.Joker{ --Flash
                     return true
                 end,
                     extra = {
-                        func = function()
-            local created_joker = true
-            G.E_MANAGER:add_event(Event({
-                func = function()
-                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_flash' })
-                    if joker_card then
-                        joker_card:set_edition("e_negative", true)
+                    func = function()
                         
-                    end
-                    
-                    return true
-                end
-            }))
-            
-            if created_joker then
-                card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = localize('k_plus_joker'), colour = G.C.BLUE})
-            end
-            return true
-        end,
-                        colour = G.C.BLUE
-                        }
+                        local created_joker = false
+                        if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
+                            created_joker = true
+                            G.GAME.joker_buffer = G.GAME.joker_buffer + 1
+                            G.E_MANAGER:add_event(Event({
+                                func = function()
+                                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_flash' })
+                                    if joker_card then
+                                    end
+                                    G.GAME.joker_buffer = 0
+                                    return true
+                                end
+                            }))
+                        end
+                        if created_joker then
+                            card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = localize('k_plus_joker'), colour = G.C.BLUE})
+                        end
+                        return true
+                    end,
+                    colour = G.C.BLUE
                 }
+            }
         end
         if context.other_joker  then
             if (function()
