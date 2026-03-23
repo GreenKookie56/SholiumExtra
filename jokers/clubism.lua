@@ -40,7 +40,7 @@ SMODS.Joker{ --Clubism
     end,
  
     calculate = function(self, card, context)
-        if context.cardarea == G.jokers and context.joker_main then
+        if context.cardarea == G.jokers and context.before then
             if (function()
                 local count = 0
                 for _, playing_card in pairs(context.scoring_hand or {}) do
