@@ -1,4 +1,4 @@
-if not next(SMODS.find_mod("Cryptid")) or not Talisman then
+if not Talisman then
   return nil
 end
 
@@ -29,7 +29,7 @@ SMODS.Joker{ --Overclock
         h = 95 * 1
     },
     cost = 30,
-    rarity = "sholium_peculiar",
+    rarity = "sholextra_peculiar",
     blueprint_compat = true,
     demicoloncompat = true,
     eternal_compat = true,
@@ -53,7 +53,7 @@ SMODS.Joker{ --Overclock
             local created_joker = true
             G.E_MANAGER:add_event(Event({
                 func = function()
-                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_sholium_bossfarmingguide' })
+                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_sholextra_bossfarmingguide' })
                     if joker_card then
                         joker_card:set_edition("e_negative", true)
                         
