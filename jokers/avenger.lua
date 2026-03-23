@@ -34,7 +34,7 @@ SMODS.Joker{ --Avrejer
     atlas = 'CustomJokers',
     
     calculate = function(self, card, context)
-        if context.cardarea == G.jokers and context.joker_main or context.forcetrigger then
+        if context.cardarea == G.jokers and context.before or context.forcetrigger then
             if G.GAME.hands[context.scoring_name] and G.GAME.hands[context.scoring_name].played_this_round > 1 then
                 return {
                     func = function()
