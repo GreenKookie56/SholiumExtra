@@ -100,7 +100,9 @@ SMODS.Joker{ --Overclock
                     end
                     return true
                 end
-                e_mult = lenient_bignum(math.floor(math.log(math.max((10 * (G.GAME.dollars or 0)),10))))
+                extra = {
+                    e_mult = lenient_bignum(math.floor(math.log(math.max((10 * (G.GAME.dollars or 0)),10))))
+                }
             }
     end
 }
