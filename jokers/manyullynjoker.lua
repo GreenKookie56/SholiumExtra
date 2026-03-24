@@ -13,9 +13,8 @@ SMODS.Joker{ --Manyullyn Joker
     loc_txt = {
         ['name'] = 'Manyullyn Joker',
         ['text'] = {
-            [1] = 'When any played card is scored,',
-            [2] = '{X:red,C:white}X#1#{} Mult and increase',
-            [3] = '{X:red,C:white}XMult{} value by {X:red,C:white}#2#{}'
+            [1] = 'When each played card is scored,',
+            [2] = '{X:red,C:white}X#1#{} Mult and increasethis by {X:red,C:white}#2#{}',
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
