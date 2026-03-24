@@ -11,7 +11,7 @@ SMODS.Joker{ --Nahuatl Joker
         ['name'] = 'Nahuatl Joker',
         ['text'] = {
             [1] = 'This Joker gains {C:mult}+#1#{} Mult and reduces',
-            [2] = 'rank of each scoring cards by {C:attention}1{}',
+            [2] = 'rank of each scoring card by {C:attention}1{}',
             [3] = 'if played hand is exactly {C:attention}3{} cards',
             [4] = '{C:inactive}(Currently{} {C:red}+#2#{} {C:inactive}Mult){}'
         },
