@@ -44,7 +44,7 @@ SMODS.Joker{ --Riptide Champion (v52)
     
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play  and not context.blueprint then
-            card.ability.extra.chips = (card.ability.extra.chips) + card.ability.extra.mod,
+            card.ability.extra.chips = (card.ability.extra.chips) + card.ability.extra.mod
             return {
                 message = localize('k_upgrade_ex')
             }
