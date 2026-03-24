@@ -78,11 +78,13 @@ SMODS.Joker{ --Hepatizon Joker
             end
         end
         if context.forcetrigger then
+            return {
             func = function()
                 card.ability.extra.rep = (card.ability.extra.rep) + 1
                 return true
             end,
             message = localize('k_upgrade_ex')
+            }
         end
         if context.repetition and context.cardarea == G.play then
             return {
