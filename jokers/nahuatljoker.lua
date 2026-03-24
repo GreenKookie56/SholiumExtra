@@ -36,6 +36,11 @@ SMODS.Joker{ --Nahuatl Joker
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
+
+    loc_vars = function(self, info_queue, card)
+        
+        return {vars = {card.ability.extra.mod, card.ability.extra.mult}}
+    end,
     
     calculate = function(self, card, context)
        if context.individual and context.cardarea == G.play and to_big(#context.full_hand) == to_big(3) then
