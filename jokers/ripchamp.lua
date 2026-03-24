@@ -20,8 +20,8 @@ SMODS.Joker{ --Riptide Champion (v52)
         }
     },
     pos = {
-        x = 0,
-        y = 0
+        x = 9,
+        y = 7
     },
     display_size = {
         w = 71 * 1, 
@@ -30,12 +30,12 @@ SMODS.Joker{ --Riptide Champion (v52)
     cost = 5,
     rarity = 2,
     blueprint_compat = true,
+    demicoloncompat = true,
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
     discovered = true,
-    atlas = 'Joker',
-    pools = { ["modprefix_sholextra_jokers"] = true },
+    atlas = 'CustomJokers',
     
     loc_vars = function(self, info_queue, card)
         
@@ -57,8 +57,20 @@ SMODS.Joker{ --Riptide Champion (v52)
                     card.ability.extra.chips = 1
                     return true
                 end,
-                message = "Reset"
+                message = localize("k_reset")
             }
+        end
+        if context.forcetrigger then
+			SMODS.scale_card(card, {
+				ref_table = card.ability.extra,
+				ref_value = "chips",
+				scalar_value = "mod",
+				message_key = "a_xchips",
+				message_colour = G.C.BLUE,
+			})
+			return {
+				x_chips = card.ability.extra.chips,
+			}
         end
     end
 }
