@@ -66,10 +66,10 @@ SMODS.Joker{ --Riptide Champion (v52)
 				ref_value = "chips",
 				scalar_value = "mod",
 				message_key = "a_xchips",
-				message_colour = G.C.BLUE,
+				message_colour = G.C.CHIPS,
 			})
 			return {
-				x_chips = card.ability.extra.chips,
+				Xchip_mod = lenient_bignum(card.ability.extra.chips),
 			}
         end
     end
