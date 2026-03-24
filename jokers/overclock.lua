@@ -1,4 +1,6 @@
-if Talisman then 
+if not Talisman then
+  return nil
+end
 
 SMODS.Joker{ --Overclock
     key = "overclock",
@@ -70,4 +72,3 @@ SMODS.Joker{ --Overclock
         end
     end
 }
-end
