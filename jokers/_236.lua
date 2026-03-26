@@ -1,0 +1,48 @@
+
+SMODS.Joker{ --2+3=6
+    key = "_236",
+    config = {
+        extra = {
+            xchips0 = 3,
+            xmult0 = 2
+        }
+    },
+    loc_txt = {
+        ['name'] = '2+3=6',
+        ['text'] = {
+            [1] = '{X:mult,C:white}x2{} Mult',
+            [2] = '{X:chips,C:white}x3{} Chips'
+        },
+        ['unlock'] = {
+            [1] = 'Unlocked by default.'
+        }
+    },
+    pos = {
+        x = 5,
+        y = 0
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
+    },
+    cost = 6,
+    rarity = 3,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
+    unlocked = true,
+    discovered = true,
+    atlas = 'CustomJokers',
+    pools = { ["refugeiu_refugeiu_jokers"] = true },
+    
+    calculate = function(self, card, context)
+        if context.cardarea == G.jokers and context.joker_main  then
+            return {
+                x_chips = 3,
+                extra = {
+                    Xmult = 2
+                }
+            }
+        end
+    end
+}
