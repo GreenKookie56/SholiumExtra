@@ -5,8 +5,8 @@ SMODS.Joker{ --Pop and Awe
     loc_txt = {
         ['name'] = 'Pop and Awe',
         ['text'] = {
-            [1] = '{C:blue}-8{} Chips',
-            [2] = '{X:blue,C:white}X3{} Chips'
+            [1] = '{C:blue}-#1#{} Chips',
+            [2] = '{X:blue,C:white}X#2#{} Chips'
         },
         ['unlock'] = {
             [1] = ''
@@ -30,12 +30,17 @@ SMODS.Joker{ --Pop and Awe
     discovered = true,
     atlas = 'CustomJokers',
 
+    loc_vars = function(self, info_queue, card)
+
+        return {vars = {card.ability.extra.chips, card.ability.extra.xchips}}
+    end,
+
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main or context.forcetrigger then
                 return {
-                    chips = -8,
+                    chips = -card.ability.extra.chips,
                     extra = {
-                        x_chips = 3,
+                        x_chips = card.ability.extra.xchips,
                         colour = G.C.DARK_EDITION
                         }
                 }
