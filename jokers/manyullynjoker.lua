@@ -33,7 +33,7 @@ SMODS.Joker{ --Manyullyn Joker
     blueprint_compat = true,
     demicoloncompat = true,
     eternal_compat = true,
-    perishable_compat = true,
+    perishable_compat = false,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
