@@ -2,17 +2,17 @@ SMODS.Joker{ --Horseboard
     key = "horseboard",
     config = {
         extra = {
-            mult = 8
+            mult = 1
         }
     },
     loc_txt = {
         ['name'] = 'Horseboard',
         ['text'] = {
-            [1] = '{X:red,C:white}X1{} Mult',
+            [1] = '{X:red,C:white}X#1#{} Mult',
             [2] = 'for every {C:attention}horse react{} in',
             [3] = '{C:dark_edition}Bloonlatro horseboard{}',
             [4] = '(in sholatro-ideas, Bloonlatro server)',
-            [5] = '{C:inactive}(Currently{} {X:red,C:white}X8{} {C:inactive}Mult){}'
+            [5] = '{C:inactive}(Currently{} {X:red,C:white}X#2#{} {C:inactive}Mult){}'
         },
         ['unlock'] = {
             [1] = ''
@@ -36,15 +36,19 @@ SMODS.Joker{ --Horseboard
     discovered = true,
     atlas = 'CustomJokers',
 
+    loc_vars = function(self, info_queue, card)
+        return {vars = {card.ability.extra.mult, 8*card.ability.extra.mult}}
+    end,
+    
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main then
                 return {
-                    Xmult = card.ability.extra.mult
+                    Xmult = lenient_bignum(8*card.ability.extra.mult)
                 }
         end
         if context.forcetrigger then
                 return {
-                    Xmult = card.ability.extra.mult
+                    Xmult = lenient_bignum(8*card.ability.extra.mult)
                 }
         end
     end

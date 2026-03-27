@@ -4,7 +4,6 @@ SMODS.Joker{ --Shiniest award (v38)
         extra = {
             req = 38,
             played = 0,
-            mult = 2000000
         }
     },
     loc_txt = {
@@ -44,7 +43,7 @@ SMODS.Joker{ --Shiniest award (v38)
         if context.cardarea == G.jokers and context.joker_main  then
             if (card.ability.extra.played or 0) >= card.ability.extra.req then
                 return {
-                    mult = card.ability.extra.mult
+                    mult = 2000000
                 }
             else
                 card.ability.extra.played = (card.ability.extra.played) + 1
@@ -55,7 +54,7 @@ SMODS.Joker{ --Shiniest award (v38)
         end
         if context.forcetrigger then
             return {
-                mult = card.ability.extra.mult
+                mult = 2000000
             }
         end
     end

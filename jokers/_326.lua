@@ -10,8 +10,8 @@ SMODS.Joker{ --3+2=6
     loc_txt = {
         ['name'] = '3+2=6',
         ['text'] = {
-            [1] = '{X:mult,C:white}x3{} Mult',
-            [2] = '{X:chips,C:white}x2{} Chips'
+            [1] = '{X:mult,C:white}x#2#{} Mult',
+            [2] = '{X:chips,C:white}x#1#{} Chips'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
@@ -33,14 +33,17 @@ SMODS.Joker{ --3+2=6
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
-    pools = { ["refugeiu_refugeiu_jokers"] = true },
+
+    loc_vars = function(self, info_queue, card)
+        return {vars = {card.ability.extra.xchips0, card.ability.extra.xmult0}}
+    end,
     
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main  then
             return {
-                x_chips = 2,
+                x_chips = card.ability.extra.xchips0,
                 extra = {
-                    Xmult = 3
+                    Xmult = card.ability.extra.xmult0
                 }
             }
         end
