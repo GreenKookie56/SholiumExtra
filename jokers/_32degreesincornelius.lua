@@ -36,7 +36,7 @@ SMODS.Joker{ --32 degrees in cornelius
     
     calculate = function(self, card, context)
         if context.post_trigger  then
-            if context.other_joker.config.center.key == "j_iciclezalt" then
+            if context.other_joker.config.center.key == "j_sholextra_iciclezalt" then
                 return {
                     
                     func = function()
