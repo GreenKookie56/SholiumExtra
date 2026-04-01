@@ -3,7 +3,7 @@ SMODS.Joker{ --Iciclez_ alt
     config = {
 		extra = {
 			mult = 1.1,
-            slot = 1
+            slots = 1
 		}
     },
     loc_txt = {
