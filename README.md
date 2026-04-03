@@ -1,7 +1,6 @@
 # Welcome to Refugium
 
 a fork of sholiumextra that adds even more inside jokes from maplist refuge
-
 (mostly just what doesnt/wont get into sholium/sholatro)
 
 NOW COMPATIBLE WITH SHOLIUMEXTRA (but why would you get both mods at once tho)
