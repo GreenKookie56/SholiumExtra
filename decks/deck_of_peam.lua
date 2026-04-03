@@ -30,30 +30,6 @@ SMODS.Back {
                 return true
             end
         }))
-        G.E_MANAGER:add_event(Event({
-            func = function()
-        local gba = get_blind_amount
-        function sigFig(num,figures)
-            local x=figures - math.ceil(math.log10(math.abs(num)))
-            return(math.floor(num*10^x+0.5)/10^x)
-        end
-        function get_blind_amount(ante)
-        	local amount = 1
-        	if ante - math.floor(ante) ~= 0 then
-	        	local a = gba(math.floor(ante)) ^ (ante - math.floor(ante))
-	        	local b = gba(math.ceil(ante)) ^ (1 - (ante - math.floor(ante)))
-		        amount = a * b
-	        else
-	        	amount = gba(ante)
-	        end
-	        	if ante >= 2 then 
-	        		amount = sigFig(amount * 20 ^ ((ante - 1) / 7) , 2)
-	        	end
-	        return amount
-        end
-                return true
-            end
-        }))
     end
 }
 
