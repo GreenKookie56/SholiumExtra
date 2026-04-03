@@ -1,0 +1,17 @@
+{
+  "id": "refugium",
+  "name": "Refugium",
+  "author": [
+    "Maplist Refuge people"
+  ],
+  "description": "SholiumExtraExtra",
+  "prefix": "refugium",
+  "main_file": "main.lua",
+  "version": "2.6.5r1",
+  "priority": 2026,
+  "badge_colour": "228922",
+  "badge_text_colour": "FFFFFF",
+  "dependencies": [
+    "Steamodded (>=1.0.0~BETA-0711a)"
+  ],
+}

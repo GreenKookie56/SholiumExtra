@@ -57,6 +57,18 @@ local function load_consumables_folder()
     end
 end
 
+local function load_decks_folder()
+    local mod_path = SMODS.current_mod.path
+    local decks_path = mod_path .. "/decks"
+    local files = NFS.getDirectoryItemsInfo(decks_path)
+    for i = 1, #files do
+        local file_name = files[i].name
+        if file_name:sub(-4) == ".lua" then
+            assert(SMODS.load_file("decks/" .. file_name))()
+        end
+    end
+end
+
 local function load_rarities_file()
     local mod_path = SMODS.current_mod.path
     assert(SMODS.load_file("rarities.lua"))()
@@ -65,17 +77,4 @@ end
 load_rarities_file()
 load_jokers_folder()
 load_consumables_folder()
-SMODS.ObjectType({
-    key = "sholium_food",
-    cards = {
-        ["j_gros_michel"] = true,
-        ["j_egg"] = true,
-        ["j_ice_cream"] = true,
-        ["j_cavendish"] = true,
-        ["j_turtle_bean"] = true,
-        ["j_diet_cola"] = true,
-        ["j_popcorn"] = true,
-        ["j_ramen"] = true,
-        ["j_selzer"] = true
-    },
-})
+load_decks_folder()
